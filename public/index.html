@@ -12,7 +12,124 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="icon" href="<%= BASE_URL %>favicon.ico">
 	<title>Sakai Vue</title>
-    <link id="theme-link" rel="stylesheet" href="<%= BASE_URL %>themes/saga-blue/theme.css">
+
+    <!-- CSS on CDN -->
+    <link id="theme-link" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/primevue@3.8.1/resources/themes/saga-blue/theme.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/primevue@3.8.1/resources/primevue.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/primeicons@4.1.0/primeicons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/primeflex@3.1.0/primeflex.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css" />
+
+    <!-- Vue & Vue Router on CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@4.0.12/dist/vue-router.global.min.js"></script>
+
+    <!-- axios on CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.23.0/dist/axios.min.js"></script>
+
+    <!-- Prism on CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/prism.min.js"></script>
+
+    <!-- Chart.js on CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <!-- Hack importmap for PrimeVue chart importing -->
+    <!-- https://github.com/primefaces/primevue/blob/master/src/components/chart/Chart.vue#L47 -->
+    <script type="importmap">
+      { "imports": { "chart.js/auto": "<%= BASE_URL %>HackChartImport.js" } }
+    </script>
+
+    <!-- PrimeVUE on CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/core/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/api/api.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/config/config.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/utils/utils.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/useconfirm/useconfirm.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/confirmationservice/confirmationservice.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/usetoast/usetoast.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/toastservice/toastservice.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/tooltip/tooltip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/ripple/ripple.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/badgedirective/badgedirective.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/styleclass/styleclass.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/accordion/accordion.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/accordiontab/accordiontab.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/autocomplete/autocomplete.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/avatar/avatar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/avatargroup/avatargroup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/badge/badge.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/breadcrumb/breadcrumb.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/button/button.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/calendar/calendar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/card/card.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/carousel/carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/chart/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/checkbox/checkbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/chip/chip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/chips/chips.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/colorpicker/colorpicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/column/column.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/confirmdialog/confirmdialog.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/confirmpopup/confirmpopup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/contextmenu/contextmenu.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/datatable/datatable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/dataview/dataview.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/dataviewlayoutoptions/dataviewlayoutoptions.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/dialog/dialog.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/divider/divider.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/dropdown/dropdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/fieldset/fieldset.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/fileupload/fileupload.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/inlinemessage/inlinemessage.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/inplace/inplace.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/inputmask/inputmask.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/inputnumber/inputnumber.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/inputswitch/inputswitch.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/inputtext/inputtext.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/galleria/galleria.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/knob/knob.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/listbox/listbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/megamenu/megamenu.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/menu/menu.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/menubar/menubar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/message/message.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/multiselect/multiselect.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/orderlist/orderlist.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/organizationchart/organizationchart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/overlaypanel/overlaypanel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/paginator/paginator.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/panel/panel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/panelmenu/panelmenu.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/password/password.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/picklist/picklist.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/progressbar/progressbar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/radiobutton/radiobutton.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/rating/rating.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/selectbutton/selectbutton.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/scrollpanel/scrollpanel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/scrolltop/scrolltop.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/slider/slider.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/sidebar/sidebar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/skeleton/skeleton.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/splitbutton/splitbutton.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/splitter/splitter.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/splitterpanel/splitterpanel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/steps/steps.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/tabmenu/tabmenu.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/tabview/tabview.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/tabpanel/tabpanel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/tag/tag.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/textarea/textarea.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/tieredmenu/tieredmenu.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/timeline/timeline.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/toast/toast.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/toolbar/toolbar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/togglebutton/togglebutton.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/tree/tree.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/treetable/treetable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/primevue@3.8.1/tristatecheckbox/tristatecheckbox.min.js"></script>
 </head>
     <body>
         <div id="app">

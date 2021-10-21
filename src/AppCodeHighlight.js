@@ -1,5 +1,3 @@
-import Prism from 'prismjs';
-
 const CodeHighlight = {
     beforeMount(el, binding) {
         const modifiers = binding.modifiers;
@@ -12,7 +10,7 @@ const CodeHighlight = {
         else
             el.className = 'language-markup';
 
-        Prism.highlightElement(el.children[0]);
+        window.Prism.highlightElement(el.children[0]);
     }
 };
 

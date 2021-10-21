@@ -1,8 +1,24 @@
-#  Sakai Admin Template for Vue  
+#  Sakai Admin Template for Vue in CDN Verion 
  
+###
+This is a fork form the awesome project [PrimeVUE](https://www.primefaces.org/primevue/)'s free admin template.
+
+The origin version using webpack to pack all components.
+
+In our fork, we using CDN Instead.
+It can reduce vendor chunk szie.
+
+```diff
+File                                    Size
+-dist\js\chunk-vendors.00813361.js       853.59 KiB
++dist\js\chunk-vendors.58d24d1d.js       40.48 KiB 
+```
+
 ### Live Preview
  
 Visit [Sakai Vue](https://www.primefaces.org/sakai-vue) website for a live preview. 
+
+Visit [Sakai Vue CDN](https://microchi.github.io/sakai-vue-cdn/) website for a live preview in CDN Version.
  
 ### Getting Started
 Sakai is an application template for Vue based on the [Vue CLI](https://cli.vuejs.org/) that provides out-of-the-box standard
@@ -15,7 +31,7 @@ npm install
 or
 
 ```
-yarn
+yarn install
 ```
 
 Next step is running the application using the serve script and navigate to **http://localhost:8080/** to view the application.

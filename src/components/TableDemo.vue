@@ -271,7 +271,7 @@
 </template>
 
 <script>
-	import {FilterMatchMode,FilterOperator} from 'primevue/api';
+	import primevue from 'primevue';
 	import CustomerService from "../service/CustomerService";
 	import ProductService from '../service/ProductService';
 	export default {
@@ -325,15 +325,15 @@
 		methods: {
 			initFilters1() {
 				this.filters1 = {
-					'global': {value: null, matchMode: FilterMatchMode.CONTAINS},
-					'name': {operator: FilterOperator.AND, constraints: [{value: null, matchMode: FilterMatchMode.STARTS_WITH}]},
-					'country.name': {operator: FilterOperator.AND, constraints: [{value: null, matchMode: FilterMatchMode.STARTS_WITH}]},
-					'representative': {value: null, matchMode: FilterMatchMode.IN},
-					'date': {operator: FilterOperator.AND, constraints: [{value: null, matchMode: FilterMatchMode.DATE_IS}]},
-					'balance': {operator: FilterOperator.AND, constraints: [{value: null, matchMode: FilterMatchMode.EQUALS}]},
-					'status': {operator: FilterOperator.OR, constraints: [{value: null, matchMode: FilterMatchMode.EQUALS}]},
-					'activity': {value: null, matchMode: FilterMatchMode.BETWEEN},
-					'verified': {value: null, matchMode: FilterMatchMode.EQUALS}
+					'global': {value: null, matchMode: primevue.api.FilterMatchMode.CONTAINS},
+					'name': {operator: primevue.api.FilterOperator.AND, constraints: [{value: null, matchMode: primevue.api.FilterMatchMode.STARTS_WITH}]},
+					'country.name': {operator: primevue.api.FilterOperator.AND, constraints: [{value: null, matchMode: primevue.api.FilterMatchMode.STARTS_WITH}]},
+					'representative': {value: null, matchMode: primevue.api.FilterMatchMode.IN},
+					'date': {operator: primevue.api.FilterOperator.AND, constraints: [{value: null, matchMode: primevue.api.FilterMatchMode.DATE_IS}]},
+					'balance': {operator: primevue.api.FilterOperator.AND, constraints: [{value: null, matchMode: primevue.api.FilterMatchMode.EQUALS}]},
+					'status': {operator: primevue.api.FilterOperator.OR, constraints: [{value: null, matchMode: primevue.api.FilterMatchMode.EQUALS}]},
+					'activity': {value: null, matchMode: primevue.api.FilterMatchMode.BETWEEN},
+					'verified': {value: null, matchMode: primevue.api.FilterMatchMode.EQUALS}
 				}
 			},
 			clearFilter1() {
